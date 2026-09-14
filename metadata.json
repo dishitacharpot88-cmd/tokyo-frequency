@@ -1,0 +1,6 @@
+{
+  "name": "Tokyo Frequency",
+  "description": "A futuristic Japanese-inspired café and vinyl listening sanctuary located in Ahmedabad, Gujarat, India, where handcrafted coffee, rare records, and ambient soundscapes converge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

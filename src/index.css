@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-surface: #121414;
+    --color-surface-container: #1e2020;
+    --color-surface-container-high: #282a2b;
+    --color-surface-container-highest: #333535;
+    --color-surface-container-low: #1a1c1c;
+    --color-surface-container-lowest: #0d0e0f;
+    --color-primary: #ebb2ff;
+    --color-primary-container: #bc13fe;
+    --color-secondary: #ffffff;
+    --color-secondary-fixed: #00fbfb;
+    --color-secondary-fixed-dim: #00dddd;
+    --color-tertiary: #ffabf3;
+    --color-on-surface: #e2e2e2;
+    --color-on-surface-variant: #d4c0d7;
+  }
+
+  body {
+    background-color: #050505;
+    color: #e2e2e2;
+    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Sora', sans-serif;
+  }
+
+  .font-hero-brand {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .font-nav-brand {
+    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Hide default cursor on desktop/mouse devices to show custom white neon cursor */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-card {
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(26, 28, 28, 0.9);
+  box-shadow: 0 0 35px rgba(235, 178, 255, 0.08);
+  transform: translateY(-3px);
+  border-color: rgba(235, 178, 255, 0.25);
+}
+
+/* Atmospheric Ambient Glows */
+.glow-primary {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(235, 178, 255, 0.09) 0%, rgba(5, 5, 5, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-secondary {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 251, 251, 0.06) 0%, rgba(5, 5, 5, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Vinyl Spin Keyframes */
+@keyframes vinyl-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.vinyl-spinning {
+  animation: vinyl-spin 6s linear infinite;
+}
+
+.vinyl-paused {
+  animation: vinyl-spin 6s linear infinite;
+  animation-play-state: paused;
+}
+
+/* Vertical Japanese Text */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Equalizer Bars */
+@keyframes eq-dance {
+  0% { height: 12%; opacity: 0.4; }
+  50% { height: 95%; opacity: 1; }
+  100% { height: 18%; opacity: 0.5; }
+}
+
+.eq-bar-anim {
+  animation: eq-dance 1.1s ease-in-out infinite alternate;
+}
+
+/* Neon Glow Utilities */
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(235, 178, 255, 0.35);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 251, 251, 0.35);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 12px rgba(235, 178, 255, 0.6);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 12px rgba(0, 251, 251, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #282a2b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ebb2ff;
+}
